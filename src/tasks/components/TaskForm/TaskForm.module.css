@@ -1,0 +1,132 @@
+.page {
+  max-width: 720px;
+  margin: auto;
+}
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 12px;
+  margin-bottom: 38px;
+}
+.back:hover {
+  color: var(--accent);
+}
+.heading {
+  margin-bottom: 30px;
+}
+.heading h1 {
+  font-size: clamp(28px, 4vw, 37px);
+  letter-spacing: -1.2px;
+}
+.heading p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+  margin-top: 13px;
+}
+.form {
+  padding: 24px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.field + .field {
+  margin-top: 30px;
+}
+.field label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+.required {
+  color: var(--accent);
+  margin-left: 3px;
+}
+.field input,
+.field textarea {
+  display: block;
+  width: 100%;
+  border: 1px solid #d8deea;
+  border-radius: var(--radius-sm);
+  padding: 14px;
+  color: var(--ink);
+  background: var(--surface);
+  font-size: 14px;
+  line-height: 1.6;
+  transition: border-color 0.15s;
+}
+.field input::placeholder,
+.field textarea::placeholder {
+  color: var(--quiet);
+  opacity: 1;
+}
+.field input:focus,
+.field textarea:focus {
+  border-color: var(--accent);
+  outline: 2px solid var(--accent-soft);
+  outline-offset: 1px;
+}
+.field [aria-invalid="true"] {
+  border-color: var(--danger);
+}
+.field textarea {
+  resize: vertical;
+  min-height: 170px;
+}
+.hint,
+.error {
+  margin-top: 9px;
+  font-size: 11px;
+  line-height: 1.6;
+}
+.hint {
+  color: var(--muted);
+}
+.error {
+  color: var(--danger);
+}
+.labelRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.optional {
+  font-weight: 400;
+  font-size: 11px;
+  color: var(--muted);
+  margin-left: 5px;
+}
+.counter {
+  color: var(--quiet);
+  font-size: 10px;
+}
+.actions {
+  border-top: 1px solid var(--border);
+  padding-top: 24px;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.actions > div {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+.note {
+  font-size: 10px;
+  color: var(--muted);
+}
+@media (min-width: 640px) {
+  .form {
+    padding: 34px;
+  }
+  .actions {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}

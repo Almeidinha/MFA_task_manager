@@ -1,0 +1,45 @@
+.dialog {
+  width: min(440px, calc(100% - 40px));
+  margin: auto;
+  padding: 30px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--ink);
+  background: var(--surface);
+}
+.dialog::backdrop {
+  background: rgb(17 29 53 / 40%);
+  backdrop-filter: blur(3px);
+}
+.icon {
+  width: 44px;
+  height: 44px;
+  background: var(--danger-bg);
+  color: var(--danger);
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  margin-bottom: 22px;
+}
+.dialog h2 {
+  font-size: 23px;
+  letter-spacing: -0.6px;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+.dialog p {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+.dialog strong {
+  color: var(--ink);
+  font-weight: 500;
+}
+.actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 28px;
+}

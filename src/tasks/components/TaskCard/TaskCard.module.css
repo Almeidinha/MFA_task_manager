@@ -1,0 +1,72 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 246px;
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  transition: border-color 0.2s;
+}
+.card:hover {
+  border-color: #bbc9e8;
+}
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.number {
+  font-size: 11px;
+  color: var(--quiet);
+  letter-spacing: 1px;
+}
+.actions {
+  display: flex;
+  gap: 3px;
+}
+.delete:hover {
+  color: var(--danger);
+  background: var(--danger-bg);
+}
+.card h2 {
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+.card h2 a:hover {
+  color: var(--accent);
+}
+.description {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.75;
+  margin: 10px 0 28px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.noDescription {
+  color: var(--quiet);
+  font-style: italic;
+}
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+}
+.bottom time {
+  font-size: 10px;
+  color: var(--muted);
+}
