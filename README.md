@@ -25,7 +25,7 @@ npm start
 - Create, edit, and delete tasks.
 - Validate required titles and show errors from the API.
 - Render the initial task list on the server, newest first.
-- Load additional tasks using the Load more button (12 per page).
+- Load additional tasks automatically while scrolling (12 per page), with a Load more button as a fallback.
 - Confirm deletion and show feedback after changes.
 
 Task fields are `id`, `titulo`, `descricao`, and `dataCriacao`, following the case requirements. IDs are generated on the server; creation timestamps use Unix milliseconds.
@@ -36,6 +36,7 @@ Task fields are `id`, `titulo`, `descricao`, and `dataCriacao`, following the ca
 - `src/tasks`: task pages, components, and helpers.
 - `src/apis`: the tRPC client and request hooks.
 - `src/global-components`: shared UI components.
+- `src/hooks`: shared React hooks.
 - `src/models`: task types and validation.
 - `src/server`: tRPC procedures and the in-memory store.
 

@@ -6,6 +6,7 @@ import useDeleteTask from "@/apis/tasksServices/useDeleteTask";
 import useGetTasks from "@/apis/tasksServices/useGetTasks";
 import Icon from "@/global-components/Icon/Icon";
 import Notice from "@/global-components/Notice/Notice";
+import useInfiniteScroll from "@/hooks/useInfiniteScroll";
 import type { Task } from "@/models/task";
 import type { TaskPage } from "@/server/router";
 import DeleteTaskDialog from "../../components/DeleteTaskDialog/DeleteTaskDialog";
@@ -28,6 +29,10 @@ const TasksPage = ({
     removeTask,
   } = useGetTasks(initialPage);
   const { deleteTask, error, isLoading: isDeleting } = useDeleteTask();
+  const sentinel = useInfiniteScroll(
+    page.nextCursor !== null && !isLoading && !loadError,
+    loadMore,
+  );
 
   const handleDelete = async (): Promise<void> => {
     if (!target) return;
@@ -98,7 +103,7 @@ const TasksPage = ({
         </section>
       )}
       {page.total > 0 && (
-        <div className={styles.end}>
+        <div className={styles.end} ref={sentinel}>
           {loadError && (
             <p className="inline-error" role="alert">
               {loadError}
